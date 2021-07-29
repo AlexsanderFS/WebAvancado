@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Alunos BSI - WEB</title>
+</head>
+<body>
+    <h1>Alunos</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Nota</th>
+                    <th>Ingresso</th>
+                    <th>Situação</th>
+                </tr>
+            </thead>
+            <tbody>
+                    <tr>
+                        <td><a href="{% url 'index' %}">{{ aluno.nome }}</a></td>
+                        <td>{{ aluno.nota }}</td>
+                        <td>{{ aluno.periodoIngresso }}</td>
+                        <td>{{ aluno.situacao }}</td>
+                    </tr>
+            </tbody>
+        </table>
+</body>
+</html>
