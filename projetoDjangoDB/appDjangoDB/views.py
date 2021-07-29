@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from django.contrib import messages
-from appDjangoDB.models import Produto
 from appDjangoDB.models import AlunosBSI
 
 
@@ -8,24 +7,12 @@ from appDjangoDB.models import AlunosBSI
 
 def index(request):
 
-    produtos = Produto.objects.all()
     alunos = AlunosBSI.objects.all()
 
     testChave = {
-        'produtos': produtos,
         'alunos': alunos
     }
     return render(request, 'index.html', testChave)
-
-
-def produto(request, id):
-
-    produto = Produto.objects.get(id=id)
-
-    context = {
-        'produto': produto
-    }
-    return render(request, 'produto.html', context)
 
 
 def alunos(request, id):
